@@ -6,10 +6,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.pack.app.entity.Article;
 
 @Repository
+@Transactional
 public class ArticleDAO implements IArticleDAO   
 {
 	@PersistenceContext	
@@ -41,9 +43,9 @@ public class ArticleDAO implements IArticleDAO
 	}
 	@Override
 	public boolean articleExists(String title, String category) {
-		String hql = "FROM Article as atcl WHERE atcl.title = ? and atcl.category = ?";
-		int count = entityManager.createQuery(hql).setParameter(1, title)
-		              .setParameter(2, category).getResultList().size();
+		String hql = "FROM Article as atcl WHERE atcl.title =:title and atcl.category =:category";
+		int count = entityManager.createQuery(hql).setParameter("title", title)
+		              .setParameter("category", category).getResultList().size();
 		return count > 0 ? true : false;
 	}
 	

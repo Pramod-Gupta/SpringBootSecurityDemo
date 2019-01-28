@@ -1,0 +1,14 @@
+com\pack\controller\ArticleController.class
+com\pack\client\RestClientUtil.class
+com\pack\dao\IUserInfoDAO.class
+com\pack\dao\IArticleDAO.class
+com\pack\app\MainApp.class
+com\pack\entity\UserInfo.class
+com\pack\service\ArticleService.class
+com\pack\service\IArticleService.class
+com\pack\dao\ArticleDAO.class
+com\pack\dao\UserInfoDAO.class
+com\pack\config\AppAuthenticationEntryPoint.class
+com\pack\config\MyAppUserDetailsService.class
+com\pack\config\SecurityConfig.class
+com\pack\entity\Article.class
